@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'cra-login',
   templateUrl: './login.html',
-  styleUrls: ['./css/cave.css', './css/animate-custom.css', './css/style.css']
+  styleUrls: ['./css/cave.css', './css/animate-custom.css', './css/style.css'],
 })
 export class LoginComponent {
-  title = 'suivi-activite';
+  title = 'cave-a-vin';
 
-  connexion (nom:string, prenom:string):void {
+  connexion(nom: string, prenom: string): void {
     console.log(`${nom} ${prenom}`);
   }
 
