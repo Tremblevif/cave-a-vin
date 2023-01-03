@@ -1,0 +1,27 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Bouteille</th>
+      <th>Bue le</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let currentBottle of bouteilles" [ngClass]="{'table-info' : isBottleSelected(currentBottle)}">
+      <td>
+        <a (click)="select(currentBottle)">
+          {{ currentBottle.vin.nom }}
+        </a>
+      </td>
+
+      <td>
+        {{ currentBottle.dateSortie | date }}
+      </td>
+
+      <td>
+        {{ currentBottle.commentaire?.note }}
+      </td>
+    </tr>
+  </tbody>
+</table>

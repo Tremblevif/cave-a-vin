@@ -1,0 +1,32 @@
+<p>Bienvenu dans votre cave {{utilisateur?.prenom}}.</p>
+<p>
+  Votre cave contient {{cave?.nbBouteilles}} bouteille(s).<br>
+  Il y a {{cave?.nbEmplacementsLibres}} emplacements disponibles.
+</p>
+<p>
+  Dernière bouteille bue :
+  <a (click)="changeVisibility()">{{bue.vin.appellation.nom}}, {{bue.vin.nom}} {{bue.vin.millesime}}</a>
+  bue le ({{bue.dateSortie | date}}).
+</p>
+
+<div class="row">
+  <div class="col-md-7">
+    <div class="card card-primary">
+      <div class="card-header">
+        Dernières bouteilles bues
+      </div>
+
+      <cra-liste-bouteilles [bouteilles]="bues" [(bouteille)]="bue">
+      </cra-liste-bouteilles>
+
+    </div>
+  </div>
+
+  <div class="col-md-5">
+    <cra-detail-bouteille [bouteilles]="bues" [(bouteille)]="bue">
+    </cra-detail-bouteille>
+  </div>
+</div>
+
+<!-- <cra-liste-bouteilles></cra-liste-bouteilles>
+<cra-detail-bouteille [hidden]="!isDetailVisible"></cra-detail-bouteille> -->
