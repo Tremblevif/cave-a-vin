@@ -4,10 +4,10 @@
   </div>
 
   <div class="card-body">
-    {{commentaire?.contenu}}
+    {{commentaire.contenu}}
     <br><br>
 
-    Note : {{commentaire?.note}}<br>
-    <input type="number" />
+    Note : {{commentaire.note}}<br>
+    <input type="number" [(ngModel)]="commentaire.note" />
   </div>
 </div>

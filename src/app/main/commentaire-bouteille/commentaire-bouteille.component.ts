@@ -5,12 +5,11 @@ import { SESSION } from 'src/app/domain/services';
 @Component({
   selector: 'cra-commentaire-bouteille',
   templateUrl: './commentaire-bouteille.component.html',
-  styleUrls: ['./commentaire-bouteille.component.css']
+  styleUrls: ['./commentaire-bouteille.component.css'],
 })
 export class CommentaireBouteilleComponent implements OnInit {
   @Input()
-  commentaire:Commentaire|undefined;
+  commentaire!: Commentaire;
 
   ngOnInit(): void {}
-
 }
