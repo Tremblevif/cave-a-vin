@@ -14,6 +14,7 @@ import { DetailBouteilleComponent } from './main/detail-bouteille/detail-bouteil
 import { CommentaireBouteilleComponent } from './main/commentaire-bouteille/commentaire-bouteille.component';
 import { ListeBouteillesComponent } from './main/liste-bouteilles/liste-bouteilles.component';
 import { FormsModule } from '@angular/forms';
+import { RatingComponent } from './main/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     DetailBouteilleComponent,
     CommentaireBouteilleComponent,
     ListeBouteillesComponent,
+    RatingComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

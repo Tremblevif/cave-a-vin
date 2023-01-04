@@ -1,0 +1,7 @@
+<p class="border d-flex justify-content-center">
+  <span *ngFor="let currentRating of rating; index as i" [id]="'star' + (i + 1)" class="glyphicon clickable" [ngClass]="{
+          'glyphicon-star': currentRating,
+          'text-warning': currentRating,
+          'glyphicon-star-empty': !currentRating
+        }" (click)="onClick(i + 1)"></span>
+</p>

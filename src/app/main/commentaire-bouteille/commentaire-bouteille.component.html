@@ -6,8 +6,7 @@
   <div class="card-body">
     {{commentaire.contenu}}
     <br><br>
-
-    Note : {{commentaire.note}}<br>
-    <input type="number" [(ngModel)]="commentaire.note" />
+    <!-- Note : {{commentaire.note}}<br>
+    <input type="number" [(ngModel)]="commentaire.note" /> -->
+    <cra-rating [(note)]="commentaire.note"></cra-rating>
   </div>
-</div>
