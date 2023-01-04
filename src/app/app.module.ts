@@ -15,6 +15,7 @@ import { CommentaireBouteilleComponent } from './main/commentaire-bouteille/comm
 import { ListeBouteillesComponent } from './main/liste-bouteilles/liste-bouteilles.component';
 import { FormsModule } from '@angular/forms';
 import { RatingComponent } from './main/rating/rating.component';
+import { CaveAVinService, SessionService } from './domain/services';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { RatingComponent } from './main/rating/rating.component';
     RatingComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [SessionService, CaveAVinService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

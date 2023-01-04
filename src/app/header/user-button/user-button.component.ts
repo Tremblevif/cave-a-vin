@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Utilisateur } from 'src/app/domain/model';
-import { SESSION } from 'src/app/domain/services';
+import { SessionService } from 'src/app/domain/services';
 
 @Component({
   selector: 'cra-user-button',
   templateUrl: './user-button.component.html',
-  styleUrls: ['./user-button.component.css']
+  styleUrls: ['./user-button.component.css'],
 })
-export class UserButtonComponent implements OnInit {
-  public utilisateur:Utilisateur | undefined;
+export class UserButtonComponent {
+  public utilisateur: Utilisateur | undefined;
 
-  ngOnInit(): void {
-    this.utilisateur = SESSION.user;
+  constructor(sessionService: SessionService) {
+    this.utilisateur = sessionService.user;
   }
 }

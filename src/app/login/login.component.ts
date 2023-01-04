@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SessionService } from '../domain/services';
 
 @Component({
   selector: 'cra-login',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   title = 'cave-a-vin';
+
+  constructor(sessionService: SessionService) {}
 
   connexion(nom: string, prenom: string): void {
     console.log(`${nom} ${prenom}`);

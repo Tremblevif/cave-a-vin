@@ -1,8 +1,8 @@
 import { Utilisateur } from '../model';
 import { CaveAVinService } from './cave-a-vin.factory';
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-// @Injectable()
+@Injectable()
 export class SessionService {
   private currentUser: Utilisateur | undefined;
 
@@ -10,11 +10,15 @@ export class SessionService {
 
   public login(prenom: string, nom: string): Utilisateur {
     // Utilisateur déjà en mémoire ?
-    this.currentUser = this.caveAVin.gestionUtilisateurs.findUtilisateurByNom(nom);
+    this.currentUser =
+      this.caveAVin.gestionUtilisateurs.findUtilisateurByNom(nom);
 
     // L'utilisateur n'est pas reconnu, on crée un nouvel utilisateur
     if (!this.currentUser) {
-      this.currentUser = this.caveAVin.gestionUtilisateurs.createUtilisateur(prenom, nom);
+      this.currentUser = this.caveAVin.gestionUtilisateurs.createUtilisateur(
+        prenom,
+        nom
+      );
       this.caveAVin.remplirCave(this.currentUser);
     }
 
@@ -30,4 +34,4 @@ export class SessionService {
   }
 }
 
-export const SESSION = new SessionService(new CaveAVinService());
+//export const SESSION = new SessionService(new CaveAVinService());

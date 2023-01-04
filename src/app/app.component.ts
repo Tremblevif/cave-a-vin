@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { SESSION } from './domain/services/session.service';
+import { Title } from '@angular/platform-browser';
+import { SessionService } from './domain/services/session.service';
 
 @Component({
   selector: 'cra-root',
@@ -9,7 +10,8 @@ import { SESSION } from './domain/services/session.service';
 export class AppComponent {
   title = 'cave-a-vin';
 
-  constructor() {
-    SESSION.login('Benoit', 'LABBE');
+  constructor(title: Title, sessionService: SessionService) {
+    sessionService.login('Harrison', 'Stafford');
+    title.setTitle('Ma superbe app de cave à vin');
   }
 }

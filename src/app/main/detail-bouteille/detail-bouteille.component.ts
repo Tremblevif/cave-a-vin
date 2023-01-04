@@ -1,21 +1,18 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Bouteille } from 'src/app/domain/model';
-import { SESSION } from 'src/app/domain/services';
 
 @Component({
   selector: 'cra-detail-bouteille',
   templateUrl: './detail-bouteille.component.html',
   styleUrls: ['./detail-bouteille.component.css'],
 })
-export class DetailBouteilleComponent implements OnInit {
+export class DetailBouteilleComponent {
   @Input()
   bouteille!: Bouteille;
   @Input()
   bouteilles: Bouteille[] | undefined;
   @Output()
   bouteilleChange = new EventEmitter<Bouteille>();
-
-  ngOnInit(): void {}
 
   public precedente(): void {
     if (this.bouteilles) {

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Bouteille, Utilisateur } from 'src/app/domain/model';
-import { SESSION } from 'src/app/domain/services';
+import { SessionService } from 'src/app/domain/services';
 
 @Component({
   selector: 'cra-liste-bouteilles',
@@ -16,8 +16,8 @@ export class ListeBouteillesComponent {
   @Output()
   bouteilleChange = new EventEmitter<Bouteille>();
 
-  ngOnInit(): void {
-    this.utilisateur = SESSION.user;
+  constructor(sessionService: SessionService) {
+    this.utilisateur = sessionService.user;
   }
 
   select(bouteille: Bouteille) {
