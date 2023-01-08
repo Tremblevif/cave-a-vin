@@ -1,12 +1,18 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ViewChildren } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
+import { DashboardComponent } from './layout/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { InfosCaveComponent } from './main/infos-cave/infos-cave.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
-  { path: 'accueil', component: AccueilComponent },
+  {
+    path: 'bouteilles',
+    component: DashboardComponent,
+    children: [{ path: 'info', component: InfosCaveComponent }],
+  },
   { path: '**', component: LoginComponent },
 ];
 

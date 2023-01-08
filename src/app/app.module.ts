@@ -23,6 +23,7 @@ import {
 } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { AccueilComponent } from './accueil/accueil.component';
+import { MenuRegionsComponent } from './sidebar/menu-regions/menu-regions.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     ListeBouteillesComponent,
     RatingComponent,
     AccueilComponent,
+    MenuRegionsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [

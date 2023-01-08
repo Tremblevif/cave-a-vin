@@ -15,7 +15,7 @@ export class LoginComponent {
   connexion(nom: string, prenom: string): void {
     this.sessionService.login(prenom, nom);
     console.log(`${nom} ${prenom}`);
-    this.router.navigate(['accueil']);
+    this.router.navigate(['/bouteilles/info']);
   }
 
   // Code simpliste, le filtrage de saisie est un problème complexe
