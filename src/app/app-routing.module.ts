@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 import { DashboardComponent } from './layout/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { BouteillesParRegionComponent } from './main/bouteilles-par-region/bouteilles-par-region.component';
 import { InfosCaveComponent } from './main/infos-cave/infos-cave.component';
 
 const routes: Routes = [
@@ -11,7 +12,10 @@ const routes: Routes = [
   {
     path: 'bouteilles',
     component: DashboardComponent,
-    children: [{ path: 'info', component: InfosCaveComponent }],
+    children: [
+      { path: 'info', component: InfosCaveComponent },
+      { path: 'region/:id', component: BouteillesParRegionComponent },
+    ],
   },
   { path: '**', component: LoginComponent },
 ];

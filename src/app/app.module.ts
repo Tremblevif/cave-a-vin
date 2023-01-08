@@ -24,6 +24,7 @@ import {
 import localeFr from '@angular/common/locales/fr';
 import { AccueilComponent } from './accueil/accueil.component';
 import { MenuRegionsComponent } from './sidebar/menu-regions/menu-regions.component';
+import { BouteillesParRegionComponent } from './main/bouteilles-par-region/bouteilles-par-region.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MenuRegionsComponent } from './sidebar/menu-regions/menu-regions.compon
     RatingComponent,
     AccueilComponent,
     MenuRegionsComponent,
+    BouteillesParRegionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
