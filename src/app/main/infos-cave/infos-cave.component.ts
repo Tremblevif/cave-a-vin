@@ -14,11 +14,10 @@ export class InfosCaveComponent implements OnInit {
   isDetailVisible: boolean = false;
   bues!: Bouteille[];
 
-  constructor(sessionService: SessionService) {
-    this.utilisateur = sessionService.user;
-  }
+  constructor(private sessionService: SessionService) {}
 
   ngOnInit(): void {
+    this.utilisateur = this.sessionService.user;
     this.cave = this.utilisateur?.cave;
     this.bues = this.cave?.dernieresBouteillesBues() ?? [];
     this.bue = this.bues[0];

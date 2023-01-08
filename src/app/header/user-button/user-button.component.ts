@@ -7,10 +7,12 @@ import { SessionService } from 'src/app/domain/services';
   templateUrl: './user-button.component.html',
   styleUrls: ['./user-button.component.css'],
 })
-export class UserButtonComponent {
+export class UserButtonComponent implements OnInit {
   public utilisateur: Utilisateur | undefined;
 
-  constructor(sessionService: SessionService) {
-    this.utilisateur = sessionService.user;
+  constructor(private sessionService: SessionService) {}
+
+  ngOnInit(): void {
+    this.utilisateur = this.sessionService.user;
   }
 }

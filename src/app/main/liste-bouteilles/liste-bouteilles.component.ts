@@ -16,11 +16,10 @@ export class ListeBouteillesComponent {
   @Output()
   bouteilleChange = new EventEmitter<Bouteille>();
 
-  constructor(sessionService: SessionService) {
-    this.utilisateur = sessionService.user;
-  }
+  constructor(private sessionService: SessionService) {}
 
   select(bouteille: Bouteille) {
+    this.utilisateur = this.sessionService.user;
     this.bouteilleChange.emit(bouteille);
   }
 

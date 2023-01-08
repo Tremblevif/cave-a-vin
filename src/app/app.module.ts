@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,6 +16,13 @@ import { ListeBouteillesComponent } from './main/liste-bouteilles/liste-bouteill
 import { FormsModule } from '@angular/forms';
 import { RatingComponent } from './main/rating/rating.component';
 import { CaveAVinService, SessionService } from './domain/services';
+import {
+  CurrencyPipe,
+  formatCurrency,
+  registerLocaleData,
+} from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +38,19 @@ import { CaveAVinService, SessionService } from './domain/services';
     CommentaireBouteilleComponent,
     ListeBouteillesComponent,
     RatingComponent,
+    AccueilComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [SessionService, CaveAVinService],
+  providers: [
+    SessionService,
+    CaveAVinService,
+    { provide: LOCALE_ID, useValue: 'fr-FR' },
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {
+    registerLocaleData(localeFr);
+    formatCurrency;
+  }
+}

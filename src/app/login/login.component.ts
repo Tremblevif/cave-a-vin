@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { SessionService } from '../domain/services';
 
 @Component({
@@ -9,10 +10,12 @@ import { SessionService } from '../domain/services';
 export class LoginComponent {
   title = 'cave-a-vin';
 
-  constructor(sessionService: SessionService) {}
+  constructor(private sessionService: SessionService, private router: Router) {}
 
   connexion(nom: string, prenom: string): void {
+    this.sessionService.login(prenom, nom);
     console.log(`${nom} ${prenom}`);
+    this.router.navigate(['accueil']);
   }
 
   // Code simpliste, le filtrage de saisie est un problème complexe
